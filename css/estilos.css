@@ -48,7 +48,7 @@ header a{
     color:white;
     font-size: 2rem;
 }
-/*FALTA a hover*/
+
 a{
     transition: all 1s;
 }
@@ -64,7 +64,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-/*FALTA slide right*/
+
 .main-contenedor{
     position: relative;
     left: 30px;
@@ -109,7 +109,7 @@ a:hover {
 }
 
 .footer{
-    width: 100vw;
+    width: 100%;
     color:white;
     background-color:#E7CDBA;
     display: grid;
@@ -134,29 +134,29 @@ footer a{
 
 
 /*quienes somos*/
-.qs{
+.qs-contenedor{
     grid-area: main;
     background-color:#E7CDBA;
     display: flex;
-    align-items: center;
-}
-.qs-contenedor{
-    padding: 60px 40px;
-    flex-basis: 50%;
-}
-.qs h1{
+    flex-direction: row;
+    padding: 2rem;
+}    
+.qs-titulo{
     font-family: 'Merriweather', serif;
-    font-size: 8rem;
+    font-size: 5rem;
     color:white;
-    
+    padding: 2rem;
 }
-.qs p{
+.qs-p{
     font-size: 2rem;
     color:white;
-    margin-top: 1rem;
+    padding: 2rem;
     
 }
+.qs-img{
+    padding: 2rem;
 
+}
 
 
 /*servicios  
@@ -173,12 +173,16 @@ footer a{
 @media screen and (max-width: 420px){
     .layout{
         grid-template-columns: repeat(4, 1fr);
+        
     }
     header{
         flex-direction: column;
     }
     main{
         background-position: center;
+    }
+    .qs-contenedor{
+        flex-direction: column;
     }
     .footer{
         grid-template-columns: 1fr;
@@ -189,8 +193,7 @@ footer a{
 
 @media screen and (max-width: 768px) {
     .layout{ 
-        grid-template-columns: repeat(4, 1fr);
-        width: 768px;
+        grid-template-columns: 1fr;
     }
     header{
         
@@ -214,9 +217,12 @@ footer a{
     .main-titulo{
         left: 0px;
     }
+    .qs-contenedor{
+        flex-direction: column;
+    }
     .footer{
         grid-template-columns: 1fr;
-        
+        width: 100%;
     }
 
 }
